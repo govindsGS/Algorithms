@@ -20,6 +20,9 @@ public class TreeTravesal {
 		binaryTree.inOrderTraversal(root);
 		System.out.print("\nPost Order Traversal :: ");
 		binaryTree.postOrderTraversal(root);
+		
+		System.out.print("\nReverse Level Order Traversal :: ");
+		binaryTree.reverseLevelOrderTraversal(root);
 	}
 
 }

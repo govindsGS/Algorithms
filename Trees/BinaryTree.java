@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BinaryTree {
 	BinaryTreeNode root;
@@ -13,6 +14,9 @@ public class BinaryTree {
 		return root;
 	}
 
+	/*
+	 * Insertions in Binary Tree
+	 */
 	public BinaryTreeNode insertInBinaryTreeLevelOrder(BinaryTreeNode root, int data) {
 		if (root == null)
 			return new BinaryTreeNode(data);
@@ -38,6 +42,9 @@ public class BinaryTree {
 		return root;
 	}
 
+	/*
+	 * Traversals in Binary Tree
+	 */
 	public void preOrderTraversal(BinaryTreeNode root) {
 		if (root != null) {
 			System.out.print(root.data + " ");
@@ -62,6 +69,31 @@ public class BinaryTree {
 		}
 	}
 
+	/*
+	 * Reverse Level Order Traversal
+	 */
+	public void reverseLevelOrderTraversal(BinaryTreeNode root) {
+		Stack<Integer> s = new Stack<>();
+		Queue<BinaryTreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+		while (!queue.isEmpty()) {
+			BinaryTreeNode temp = queue.poll();
+			if (temp.right != null) {
+				queue.offer(temp.right);
+			}
+			if (temp.left != null) {
+				queue.offer(temp.left);
+			}
+			s.push(temp.data);
+		}
+		while (!s.isEmpty()) {
+			System.out.print(s.pop() + " ");
+		}
+	}
+
+	/*
+	 * Getting size of Binary Tree
+	 */
 	public int getSize(BinaryTreeNode root) {
 		int leftCount = root.left == null ? 0 : getSize(root.left);
 		int rightCount = root.right == null ? 0 : getSize(root.right);
