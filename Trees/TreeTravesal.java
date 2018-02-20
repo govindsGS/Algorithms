@@ -12,6 +12,7 @@ public class TreeTravesal {
 		root = binaryTree.insertInBinaryTreeLevelOrder(root, 5);
 		root = binaryTree.insertInBinaryTreeLevelOrder(root, 6);
 		root = binaryTree.insertInBinaryTreeLevelOrder(root, 7);
+		root = binaryTree.insertInBinaryTreeLevelOrder(root, 8);
 		
 		System.out.print("Pre Order Traversal :: ");
 		binaryTree.preOrderTraversal(root);
